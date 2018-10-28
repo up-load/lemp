@@ -7,7 +7,10 @@ echo "- Текстовый редактор nano"
 echo "и самоуничтожится."
 read -p "Продолжить? (y/n) Если ДА - нажмите Enter" CONTINUE
 if [[ $CONTINUE = "y" || $CONTINUE = "" ]]; then
-	sudo apt update && sudo apt -y dist-upgrade && sudo apt -y autoremove && sudo apt -y autoclean
+	sudo apt update 
+	sudo apt -y dist-upgrade
+	sudo apt -y autoremove
+	sudo apt -y autoclean
 	sudo apt-get install -y software-properties-common
 	sudo apt-get install -y nano
 #	sudo add-apt-repository ppa:nginx/stable
