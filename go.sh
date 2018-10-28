@@ -2,6 +2,7 @@
 echo "Запущенный скрипт установит:"
 echo "- Nginx"
 echo "- Php7.2"
+echo "- Composer (глобально)"
 echo "и самоуничтожится."
 read -p "Продолжить? (y/n) Если ДА - нажмите Enter" CONTINUE
 if [[ $CONTINUE = "y" || $CONTINUE = "" ]]; then
@@ -22,10 +23,14 @@ if [[ $CONTINUE = "y" || $CONTINUE = "" ]]; then
 	sudo nginx -t
 	sudo systemctl reload nginx
 	sudo systemctl restart nginx
+	sudo systemctl enable nginx
 #	sudo add-apt-repository ppa:ondrej/php
 #	sudo apt-get update
 	sudo apt install -y php7.2-cli php7.2-fpm php7.2-curl php7.2-gd php7.2-mysql php7.2-mbstring zip unzip
 	sudo systemctl restart php7.2-fpm
+	sudo systemctl enable php7.2-fpm
+	curl -sS https://getcomposer.org/installer -o composer-setup.php
+	sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 	sudo rm -rf lemp
 else
 	exit
