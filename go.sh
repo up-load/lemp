@@ -15,8 +15,8 @@ if [[ $CONTINUE = "y" || $CONTINUE = "" ]]; then
 	sudo apt-get install -y nano
 #	sudo add-apt-repository ppa:nginx/stable
 	apt-key adv --keyserver keyserver.ubuntu.com --recv C300EE8C
-	echo "deb https://ppa.launchpad.net/nginx/stable/ubuntu $(lsb_release -cs) main" >> /etc/apt/sources.list
-	echo "deb https://ppa.launchpad.net/ondrej/php/ubuntu $(lsb_release -cs) main" >> /etc/apt/sources.list
+	echo "deb http://ppa.launchpad.net/nginx/stable/ubuntu $(lsb_release -cs) main" >> /etc/apt/sources.list
+	echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu $(lsb_release -cs) main" >> /etc/apt/sources.list
 	sudo apt-get update
 	sudo apt-get install -y nginx
 	sudo mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.backup
