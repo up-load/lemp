@@ -30,7 +30,7 @@ if [[ $CONTINUE = "y" || $CONTINUE = "" ]]; then
 	sudo systemctl enable php7.2-fpm
 	curl -sS https://getcomposer.org/installer -o composer-setup.php
 	sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
-	sudo rm -rf lemp
+	sudo rm -rf lemp && sudo rm composer-setup.php
 else
 	exit
 fi
