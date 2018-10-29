@@ -25,7 +25,7 @@ if [[ $CONTINUE = "y" || $CONTINUE = "" ]]; then
 	sudo systemctl reload nginx
 	sudo systemctl restart nginx
 	sudo systemctl enable nginx
-	sudo apt install -y php7.2-cli php7.2-fpm php7.2-curl php7.2-gd php7.2-pgsql php7.2-mbstring zip unzip
+	sudo apt install -y php7.2-cli php7.2-fpm curl php7.2-curl php7.2-gd php7.2-pgsql php7.2-mbstring zip unzip
 	sudo systemctl restart php7.2-fpm
 	sudo systemctl enable php7.2-fpm
 	curl -sS https://getcomposer.org/installer -o composer-setup.php
