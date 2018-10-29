@@ -31,6 +31,8 @@ if [[ $CONTINUE = "y" || $CONTINUE = "" ]]; then
 	curl -sS https://getcomposer.org/installer -o composer-setup.php
 	sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 	sudo rm -rf lemp && sudo rm composer-setup.php
+	sudo mkdir -p /var/www/html/public
+	sudo chown -R www-data: /var/www
 else
 	exit
 fi
